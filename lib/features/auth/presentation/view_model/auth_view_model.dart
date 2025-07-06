@@ -1,6 +1,4 @@
-import 'package:e_com/config/constant/show_snackbar.dart';
 import 'package:e_com/config/router/app_routes.dart';
-import 'package:e_com/features/auth/data/model/auth_api_model.dart';
 import 'package:e_com/features/auth/domain/usecase/login_usecase.dart';
 import 'package:e_com/features/auth/domain/usecase/register_usecase.dart';
 import 'package:e_com/features/auth/presentation/state/auth_state.dart';
@@ -46,11 +44,7 @@ class AuthViewModel extends StateNotifier<AuthState> {
     result.fold(
       (failure) {
         state = state.copyWith(error: failure.error, showMessage: true);
-        showSnackBar(
-          message: failure.error,
-          context: context,
-          color: Colors.red,
-        );
+        EasyLoading.showError(failure.error);
       },
       (success) {
         state = state.copyWith(
@@ -87,7 +81,7 @@ class AuthViewModel extends StateNotifier<AuthState> {
           error: failure.error.toString(),
           showMessage: true,
         );
-       EasyLoading.showError(failure.error, dismissOnTap: true);
+        EasyLoading.showError(failure.error, dismissOnTap: true);
       },
       (success) {
         state = state.copyWith(

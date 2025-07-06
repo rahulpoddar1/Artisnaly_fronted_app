@@ -88,7 +88,6 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                       itemBuilder: (context, index) {
                         final product = productState.products[index];
                         final hasDiscount =
-                            product.discountPrice.isNotEmpty &&
                             product.discountPrice != product.productPrice;
 
                         return Container(
@@ -110,9 +109,9 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                             children: [
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(12),
-                                child: product.image.isNotEmpty
+                                child: product.image!.isNotEmpty
                                     ? Image.network(
-                                        product.image,
+                                        product.image ?? "",
                                         height: 180,
                                         width: double.infinity,
                                         fit: BoxFit.cover,
@@ -139,7 +138,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
-                                  product.productType,
+                                  product.productType ?? "",
                                   style: const TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w500,
@@ -149,7 +148,7 @@ class _DashboardViewState extends ConsumerState<DashboardView> {
                               ),
                               const SizedBox(height: 8),
                               Text(
-                                product.title,
+                                product.title ?? "",
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
