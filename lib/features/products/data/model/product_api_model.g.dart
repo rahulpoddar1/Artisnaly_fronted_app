@@ -8,13 +8,13 @@ part of 'product_api_model.dart';
 
 ProductApiModel _$ProductApiModelFromJson(Map<String, dynamic> json) =>
     ProductApiModel(
-      id: json['_id'] as String?,
-      title: json['title'] as String?,
-      description: json['description'] as String?,
-      productType: json['productType'] as String?,
-      productPrice: json['productPrice'] as String?,
-      discountPrice: json['discountPrice'] as String?,
-      image: json['image'] as String?,
+      id: json['_id'] as String,
+      title: json['title'] as String,
+      description: json['description'] as String,
+      productType: json['productType'] as String,
+      productPrice: json['productPrice'] as String,
+      discountPrice: json['discountPrice'] as String,
+      image: json['image'] as String,
     );
 
 Map<String, dynamic> _$ProductApiModelToJson(ProductApiModel instance) =>

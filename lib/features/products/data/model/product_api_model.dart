@@ -5,21 +5,21 @@ part 'product_api_model.g.dart';
 @JsonSerializable()
 class ProductApiModel {
   @JsonKey(name: "_id")
-  final String? id;
-  final String? title;
-  final String? description;
-  final String? productType;
-  final String? productPrice;
-  final String? discountPrice;
-  final String? image;
+  final String id;
+  final String title;
+  final String description;
+  final String productType;
+  final String productPrice;
+  final String discountPrice;
+  final String image;
   ProductApiModel({
-    this.id,
-    this.title,
-    this.description,
-    this.productType,
-    this.productPrice,
-    this.discountPrice,
-    this.image,
+    required this.id,
+    required this.title,
+    required this.description,
+    required this.productType,
+    required this.productPrice,
+    required this.discountPrice,
+    required this.image,
   });
 
   Map<String, dynamic> toJson() => _$ProductApiModelToJson(this);

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
 
@@ -15,7 +14,7 @@ class _MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute:  AppRoutes.registerRoute,
+      initialRoute:  AppRoutes.loginRoute,
       routes: AppRoutes.getApplicationRoute(),
       debugShowCheckedModeBanner: false,
       builder: EasyLoading.init(),
